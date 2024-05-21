@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!--
+@author: hifzhil
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="z-arm"> 
+    <gazebo reference="base_0">
+        <material>Gazebo/Red</material>
+      </gazebo>
+</robot>

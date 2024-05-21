@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="z-arm">
+  
+  <!-- <xacro:include filename="$(find spawn_bot)/model/urdf/arm_properties.urdf.xacro"/> -->
+  <xacro:include filename="$(find spawn_bot)/model/urdf/bases/arm_bases.gazebo.xacro"/>
+
+	<xacro:macro name="arm_bases" params="name">
+
+		<!-- World fixed joint-->
+		<link name="world" />
+
+		<!-- A joint for world to arm base -->
+		<joint name="world_fixed" type="fixed">
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<parent link="world"/>
+			<child link="l0_base"/>
+		</joint>
+
+		
+		<!-- A base_link -->
+		<link name="l0_base">
+			<visual>
+				<geometry>
+					<mesh filename="package://spawn_bot/model/meshes/base.stl"/>
+				</geometry>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<material name="gray"/>
+			</visual>
+
+			<collision>
+				<geometry>
+					<mesh filename="package://spawn_bot/model/meshes/base.stl"/>
+				</geometry>
+				<origin rpy="0 0 0" xyz="0 0 0"/>
+				<material name="gray"/>
+			</collision>
+
+			<inertial>
+				<mass value="10.635"/>
+				<origin xyz="0 0 0"/>
+				<inertia ixx="0.02216" ixy="5.8001e-06" ixz="6.1941e-06" iyy="0.024835" iyz="-5.3034e-05" izz="0.021063"/>
+			</inertial>
+			
+		</link>
+	</xacro:macro>
+
+</robot>

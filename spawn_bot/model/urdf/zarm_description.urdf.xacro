@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="z-arm">
+  <xacro:include filename="$(find spawn_bot)/model/urdf/bases/arm_bases.urdf.xacro"/>
+  <xacro:include filename="$(find spawn_bot)/model/urdf/arms/z-arm.urdf.xacro"/>
+
+  <!-- *************** -->
+  <!-- Robots Elements -->
+  <!-- *************** -->
+  <xacro:arm_bases name="zarm"/>
+  <xacro:Joint_1/>
+  <xacro:Joint_2/>
+  <xacro:Joint_3/>
+  <xacro:Joint_4/>
+</robot>

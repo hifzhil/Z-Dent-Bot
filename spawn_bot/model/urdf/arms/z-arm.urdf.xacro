@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="z-arm" >
+  
+  <!-- <xacro:include filename="$(find spawn_bot)/model/urdf/arm_properties.urdf.xacro"/> -->
+  <xacro:include filename="$(find spawn_bot)/model/urdf/arms/z-arm.gazebo.xacro"/>
+
+<!-- Joints -->
+	<xacro:macro name="Joint_1">
+		<joint name="joint_1" type="revolute">
+			<axis xyz="0 0 1"/>
+			<limit effort="50" lower="-3.14" upper="3.14" velocity="0.5"/>
+			<parent link="l0_base"/>
+			<child link="l1_link"/>
+			<origin xyz="0 0 0"/>
+			<dynamics damping="60.0" friction="4.0" />
+		</joint>
+	</xacro:macro>
+
+	<xacro:macro name="Joint_2">
+		<joint name="joint_2" type="revolute">
+			<axis xyz="0 1 0"/>
+			<limit effort="50" lower="-1.570796" upper="1.570796" velocity="0.5"/>
+			<parent link="l1_link"/>
+			<child link="l2_link"/>
+			<origin xyz="0 0 0.03796"/>
+			<dynamics damping="60.0" friction="4.0" />
+		</joint>
+	</xacro:macro>
+
+	<xacro:macro name="Joint_3">
+		<joint name="joint_3" type="revolute">
+			<axis xyz="0 1 0"/>
+			<limit effort="50" lower="-0.78539815" upper="3.1415926" velocity="0.5"/>
+			<parent link="l2_link"/>
+			<child link="l3_link"/>
+			<origin xyz="0.03 0 0.23682"/>
+			<dynamics damping="60.0" friction="4.0" />
+		</joint>
+	</xacro:macro>
+
+	<xacro:macro name="Joint_4">
+		<joint name="joint_4" type="revolute">
+			<axis xyz="0 1 0"/>
+			<limit effort="50" lower="-2.3561942" upper="2.3561942" velocity="0.5"/>
+			<parent link="l3_link"/>
+			<child link="l4_link"/>
+			<origin xyz="0 0 0.21599"/>
+			<dynamics damping="60.0" friction="4.0" />
+		</joint>
+	</xacro:macro>
+
+<!-- Links -->
+	<link name="l1_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://spawn_bot/model/meshes/L1.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="white"/>
+		</visual>
+
+		<collision>
+			<geometry>
+				<mesh filename="package://spawn_bot/model/meshes/L1.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="white"/>
+		</collision>
+
+		<inertial>
+			<mass value="1.863"/>
+			<origin xyz="4.4e-05    0.029982    -0.01112"/>
+			<inertia ixx="0.045839" ixy="1.2759e-05" ixz="-3.6168e-05" iyy="0.032913"
+				iyz="-0.0029965"
+				izz="0.044399"/>
+		</inertial>
+
+	</link>
+
+	<link name="l2_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://spawn_bot/model/meshes/L2.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 -0.03796"/>
+			<material name="white"/>
+		</visual>
+
+		<collision>
+			<geometry>
+				<mesh filename="package://spawn_bot/model/meshes/L2.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 -0.03796"/>
+			<material name="white"/>
+		</collision>
+
+		<inertial>
+			<mass value="1.063"/>
+			<origin xyz="4.4e-05    0.029982    -0.01112"/>
+			<inertia ixx="0.045839" ixy="1.2759e-05" ixz="-3.6168e-05" iyy="0.032913"
+				iyz="-0.0029965"
+				izz="0.044399"/>
+		</inertial>
+
+	</link>
+
+	<link name="l3_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://spawn_bot/model/meshes/L3.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="-0.03 0 -0.27477"/>
+			<material name="white"/>
+		</visual>
+
+		<collision>
+			<geometry>
+				<mesh filename="package://spawn_bot/model/meshes/L3.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="-0.03 0 -0.27477"/>
+			<material name="white"/>
+		</collision>
+
+		<inertial>
+			<mass value="0.881"/>
+			<origin xyz="8.5e-05   -0.002513    0.032058"/>
+			<inertia ixx="0.012756" ixy="-5.4257e-06" ixz="1.6402e-05" iyy="0.011416"
+				iyz="-0.0001989"
+				izz="0.0080652"/>
+		</inertial>
+	</link>
+
+	<link name="l4_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://spawn_bot/model/meshes/L4.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="-0.03 0 -0.49076"/>
+			<material name="white"/>
+		</visual>
+
+		<collision>
+			<geometry>
+				<mesh filename="package://spawn_bot/model/meshes/L4.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="-0.03 0 -0.49076"/>
+			<material name="white"/>
+		</collision>
+
+		<inertial>
+			<mass value="0.273"/>
+			<origin xyz="-9.6e-05    0.085314    -0.13975"/>
+			<inertia ixx="0.12246" ixy="2.3905e-05" ixz="2.5022e-05" iyy="0.11307" iyz="-0.027995"
+				izz="0.017186"/>
+		</inertial>
+	</link>
+
+
+</robot>

@@ -19,6 +19,21 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="gray"/>
     </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://spawn_bot/model/meshes/base.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="gray"/>
+    </collision>
+
+    <inertial>
+  	  <mass value="3.635"/>
+  	  <origin xyz="4e-06 -0.001016 0.08181"/>
+      <inertia ixx="0.02216" ixy="5.8001e-06" ixz="6.1941e-06" iyy="0.024835" iyz="-5.3034e-05" izz="0.021063"/>
+    </inertial>
+
   </link>
 
   <link name="l1_link">
@@ -29,7 +44,30 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="white"/>
     </visual>
-  </link>
+
+    <collision>
+      <geometry>
+        <box size="5.0 5.0 5.0"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </collision>
+  
+  <!-- <inertial>
+  	  <mass value="3.635"/>
+  	  <origin xyz="4e-06 -0.001016 0.08181"/>
+      <inertia ixx="0.02216" ixy="5.8001e-06" ixz="6.1941e-06" iyy="0.024835" iyz="-5.3034e-05" izz="0.021063"/>
+    </inertial>
+  </link>  -->
+
+    <inertial>
+      <mass value="7.863"/>
+      <origin xyz="4.4e-05    0.029982    -0.01112"/>
+      <inertia ixx="0.045839" ixy="1.2759e-05" ixz="-3.6168e-05" iyy="0.032913"
+        iyz="-0.0029965"
+        izz="0.044399"/>
+    </inertial>
+
 
   <link name="l2_link">
     <visual>
@@ -39,6 +77,15 @@
       <origin rpy="0 0 0" xyz="0 0 -0.03796"/>
       <material name="white"/>
     </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://spawn_bot/model/meshes/L2.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.03796"/>
+      <material name="white"/>
+    </collision>
+
   </link>
 
   <link name="l3_link">
@@ -49,6 +96,15 @@
       <origin rpy="0 0 0" xyz="-0.03 0 -0.27477"/>
       <material name="white"/>
     </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://spawn_bot/model/meshes/L3.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.03 0 -0.27477"/>
+      <material name="white"/>
+    </collision>
+
   </link>
  
   <link name="l4_link">
@@ -59,6 +115,15 @@
       <origin rpy="0 0 0" xyz="-0.03 0 -0.49076"/>
       <material name="white"/>
     </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://spawn_bot/model/meshes/L4.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.03 0 -0.49076"/>
+      <material name="white"/>
+    </collision>
+
   </link>
 
   
@@ -69,6 +134,8 @@
     <parent link="base_link"/>
     <child link="l1_link"/>
     <origin xyz="0 0 0"/>
+    <limit effort="411" lower="-6.2832" upper="6.2832" velocity="3.1416"/>
+    <dynamics damping="60.0" friction="4.0" />
   </joint>
 
   <joint name="L1_to_L2" type="revolute">
@@ -77,6 +144,8 @@
     <parent link="l1_link"/>
     <child link="l2_link"/>
     <origin xyz="0 0 0.03796"/>
+    <limit effort="411" lower="-6.2832" upper="6.2832" velocity="3.1416"/>
+    <dynamics damping="60.0" friction="4.0" />
   </joint>
 
   <joint name="L2_to_L3" type="revolute">
@@ -85,6 +154,8 @@
     <parent link="l2_link"/>
     <child link="l3_link"/>
     <origin xyz="0.03 0 0.23682"/>
+    <limit effort="411" lower="-6.2832" upper="6.2832" velocity="3.1416"/>
+    <dynamics damping="60.0" friction="4.0" />
   </joint>
 
   <joint name="L3_to_L4" type="revolute">
@@ -93,6 +164,8 @@
     <parent link="l3_link"/>
     <child link="l4_link"/>
     <origin xyz="0 0 0.21599"/>
+    <limit effort="411" lower="-6.2832" upper="6.2832" velocity="3.1416"/>
+    <dynamics damping="60.0" friction="4.0" />
   </joint>
 
 </robot>
