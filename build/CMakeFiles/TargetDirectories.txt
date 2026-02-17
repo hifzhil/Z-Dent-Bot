@@ -1,9 +1,0 @@
-/home/zhiel/zhiel-tech_ws/src/Z-Dent-Bot/build/CMakeFiles/uninstall.dir
-/home/zhiel/zhiel-tech_ws/src/Z-Dent-Bot/build/CMakeFiles/z-dent_sim_uninstall.dir
-/home/zhiel/zhiel-tech_ws/src/Z-Dent-Bot/build/CMakeFiles/test.dir
-/home/zhiel/zhiel-tech_ws/src/Z-Dent-Bot/build/CMakeFiles/edit_cache.dir
-/home/zhiel/zhiel-tech_ws/src/Z-Dent-Bot/build/CMakeFiles/rebuild_cache.dir
-/home/zhiel/zhiel-tech_ws/src/Z-Dent-Bot/build/CMakeFiles/list_install_components.dir
-/home/zhiel/zhiel-tech_ws/src/Z-Dent-Bot/build/CMakeFiles/install.dir
-/home/zhiel/zhiel-tech_ws/src/Z-Dent-Bot/build/CMakeFiles/install/local.dir
-/home/zhiel/zhiel-tech_ws/src/Z-Dent-Bot/build/CMakeFiles/install/strip.dir
